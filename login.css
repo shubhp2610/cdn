@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'ceraReg';
-    src: url('https://stackapi.net/admission/fonts/Rubik-Regular.ttf');
+    src: url('https://cdn.shubhp2610.vercel.app/Rubik-Regular.ttf');
   }*{
 	  font-family: 'ceraReg', sans-serif;
     padding: 0;
