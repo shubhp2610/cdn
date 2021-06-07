@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+textarea{
+  font-size:24px;
+  width:100%;
+}button{
+font-size:24px;
+}
+</style>
+</head>
+<body>
+
+<textarea id="tx"></textarea>
+<button onclick="doit()">Convert</button>
+<script>
+function doit(){
+	var t = document.getElementById("tx");
+    t.value=t.value.toUpperCase();
+}
+</script>
+</body>
+</html>
