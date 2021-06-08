@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,7 @@
 textarea{
   font-size:24px;
   width:100%;
+  HEIGHT:50vh;
 }button{
 font-size:24px;
 }
@@ -15,11 +17,21 @@ font-size:24px;
 
 <textarea id="tx"></textarea>
 <button onclick="doit()">Convert</button>
+<button onclick="CLR()">CLEAR</button>
 <script>
 function doit(){
 	var t = document.getElementById("tx");
-    t.value=t.value.toUpperCase();
+    t.value=t.value.replaceAll("\n"," ").toUpperCase();
+	t.select();
+  t.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
 }
+function CLR(){
+document.getElementById("tx").value="";
+}
+
 </script>
 </body>
 </html>
