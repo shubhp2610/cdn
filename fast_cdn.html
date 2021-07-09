@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Git</title>
+    <style>
+        @font-face {
+            font-family: 'ceraReg';
+            src: url('https://cdn.jsdelivr.net/gh/shubhp2610/cdn/projects/fontsCombo01/AndroidEuclid-Medium-WebS.woff2');
+        }
+
+        * {
+            font-family: 'ceraReg', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        a {
+
+            padding: 5px;
+            text-decoration: none;
+            margin-left: 10px;
+            margin-top: 15px;
+
+        }
+
+        .in {
+            color: #03920f;
+            margin-left: 50px;
+            font-size: 15px;
+        }
+
+        .folder {
+            text-decoration: line-through;
+            color: blue;
+        }
+
+        .out {
+            color: black;
+        }
+
+        .b {
+            /* margin-top: 2px;*/
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        async function getD(url) {
+            const response = await fetch(url);
+            var s = "";
+            var data = await response.json();
+            for (var key in data.tree) {
+                name = data.tree[key].path;
+                if (name.indexOf("/") == -1) {
+                    if (name.indexOf(".") != -1) {
+                        s += "<div class=\"b\"><a class=\"out\" href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name + "</a></div>";
+                    } else {
+                        s += "<div class=\"b\"><a class=\"folder\" href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name + "</a></div>";
+                    }
+                } else {
+                    var tmp = name.split("/");
+                    s += "<div class=\"b\"><a class=\"in\" href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name + "</a></div>";
+                }
+            }
+
+            //  s += "<a href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name + "</a>";
+            document.getElementById("e").innerHTML = s;
+
+        }
+        getD("https://api.github.com/repos/shubhp2610/cdn/git/trees/master?recursive=1");
+    </script>
+    <div class="" id="e">
+
+
+    </div>
+
+
+</body>
+
+</html>
