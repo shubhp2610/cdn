@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'ceraReg';
-    src: url('https://cdn.shubhp2610.vercel.app/Rubik-Regular.ttf');
+    src: url('https://cdn.jsdelivr.net/gh/shubhp2610/cdn/Rubik-Regular.ttf');
   }*{
 	  font-family: 'ceraReg', sans-serif;
     padding: 0;
