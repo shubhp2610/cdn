@@ -59,15 +59,17 @@
             for (var key in data.tree) {
                 name = data.tree[key].path;
                 size=data.tree[key].size;
+                size/=1204;
+                size/=1204;
                 if (name.indexOf("/") == -1) {
                     if (name.indexOf(".") != -1) {
-                        s += "<div class=\"b\"><a class=\"out\" href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name +" ("+size+")"+"</a></div>";
+                        s += "<div class=\"b\"><a class=\"out\" href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name +" ("+size+" MB)"+"</a></div>";
                     } else {
                         s += "<div class=\"b\"><a class=\"folder\" href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name +"</a></div>";
                     }
                 } else {
                     var tmp = name.split("/");
-                    s += "<div class=\"b\"><a class=\"in\" href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name +" ("+size+")"+ "</a></div>";
+                    s += "<div class=\"b\"><a class=\"in\" href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name +" ("+size+" MB)"+ "</a></div>";
                 }
             }
 
