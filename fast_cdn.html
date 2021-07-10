@@ -59,8 +59,9 @@
             for (var key in data.tree) {
                 name = data.tree[key].path;
                 size=data.tree[key].size;
-                size/=1204;
-                size/=1204;
+                size/=1024;
+                size/=1024;
+                size=parseFloat(size).toFixed(2);
                 if (name.indexOf("/") == -1) {
                     if (name.indexOf(".") != -1) {
                         s += "<div class=\"b\"><a class=\"out\" href=\"https://cdn.jsdelivr.net/gh/shubhp2610/cdn/" + name + "\">" + name +" ("+size+" MB)"+"</a></div>";
